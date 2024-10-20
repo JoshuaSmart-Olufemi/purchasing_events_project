@@ -31,11 +31,19 @@ models:
                   type: sum
                   round: 2
                   format: 'usd'
+                
+                average_revenue:
+                  label: 'average revenue'
+                  type: average
+                  round: 2
+                  format: 'usd'
 
           - name: activity_occurence
             description: 'how many times activity was repeated'
             meta:
               dimension:
+                type: number
+              metric:
                 type: number
 
           - name: activity_repeated_at
@@ -62,7 +70,7 @@ models:
                 time_intervals:  ['RAW', 'DAY', 'WEEK', 'MONTH', 'YEAR']
 
           - name: activity
-            description: 'type of activtity'
+            description: 'type of activity'
             meta:
               dimension: 
                 type: string
