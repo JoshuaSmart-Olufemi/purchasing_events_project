@@ -39,4 +39,8 @@ models:
   my_new_project:
     # Applies to all files under models/example/
     example:
+      +materialized: view
+    staging:
+      +materialized: view
+    events_layer:
       +materialized: table
