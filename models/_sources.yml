@@ -2,7 +2,7 @@ version: 2
 
 sources:
 
-  - name: MSSQL # name of the source 
+  - name: motherduck # name of the source 
     schema: public # this is the schema our raw data lives in
     database: loans_db # this is the name of our database
 
@@ -16,7 +16,6 @@ sources:
       error_after: {count: 48, period: hour}
 
     tables:
-      - name: purchasing
-        loaded_at_field: modifieddate
+      - name: loans_data
         description: >
           Contains demographic information about each superhero
