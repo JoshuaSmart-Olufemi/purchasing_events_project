@@ -1,0 +1,55 @@
+version: 2
+
+models:
+    - name: loan_payments_defaulted
+      description: "activity schema model on loans defaulted by customers"
+      columns:
+          - name: activity_id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+
+          - name: ts 
+
+          - name: activity
+
+          - name: revenue_impact
+
+          - name: activity_occurence
+
+          - name: activity_repeated_at
+
+    - name: loans_payments_ongoing
+      description: "activity schema model on loan payments ongoing by customers"
+      columns:
+          - name: anonymous_customer_id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+          
+          - name: ts 
+
+          - name: activity
+
+          - name: revenue_impact
+
+          - name: activity_occurence
+
+          - name: activity_repeated_at
+
+    - name: loans_payments_repaid
+      description: "activity schema mode on loans repaid by customers"
+      columns:
+        - name: activity_id
+
+        - name: ts 
+
+        - name: activity
+
+        - name: revenue_impact
+
+        - name: activity_occurence
+
+        - name: activity_repeated_at
