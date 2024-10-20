@@ -41,8 +41,6 @@ models:
           - name: activity_occurence
             description: 'how many times activity was repeated'
             meta:
-              dimension:
-                type: number
               metrics:
                 type: number
 
