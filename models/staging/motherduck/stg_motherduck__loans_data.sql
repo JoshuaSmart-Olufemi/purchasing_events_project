@@ -30,6 +30,7 @@ activities as (
             when activity = 'Late' then 'loan_payment_defaulted'
             when activity = 'Repaid' then 'loan_payment_repaid'
       end as activity
+    , {{ dbt_utils.generate_surrogate_key(['ts', 'customer']) }} as anonymous_customer_id
     , revenue_impact
     from renamed
 )
