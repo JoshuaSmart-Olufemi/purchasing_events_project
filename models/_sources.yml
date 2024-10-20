@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+
+  - name: MSSQL # name of the source 
+    schema: public # this is the schema our raw data lives in
+    database: loans_db # this is the name of our database
+
+    quoting:
+      database: false
+      schema: false
+      identifier: false
+
+    freshness:
+      warn_after: {count: 24, period: hour}
+      error_after: {count: 48, period: hour}
+
+    tables:
+      - name: purchasing
+        loaded_at_field: modifieddate
+        description: >
+          Contains demographic information about each superhero
