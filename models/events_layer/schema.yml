@@ -43,7 +43,7 @@ models:
             meta:
               dimension:
                 type: number
-              metric:
+              metrics:
                 type: number
 
           - name: activity_repeated_at
