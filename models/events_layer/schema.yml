@@ -1,11 +1,11 @@
 version: 2
 
 models:
-    - name: loan_payments_defaulted
+    - name: loan_streams
       description: "activity schema model on loans defaulted by customers"
       columns:
           - name: activity_id
-            description: "The primary key for this table"
+            description: "The primary key and activity identifier for this table"
             tests:
                 - unique
                 - not_null
@@ -16,6 +16,12 @@ models:
               dimension:
                 type: timestamp
                 time_intervals:  ['RAW', 'DAY', 'WEEK', 'MONTH', 'YEAR']
+
+          - name: customer
+            description: 'id of customer engaged in loan'
+            meta:
+              metrics:
+                type: count
 
           - name: activity
             meta:
