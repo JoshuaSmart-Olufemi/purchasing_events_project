@@ -6,8 +6,8 @@
 --how many loans did each customer have ongoing before they were repaid?: ++
 -- how mnay loans did each customer have ongoing before a first installment of repayments?: 0?
 
---count of loans ongoing after repayment
--- how many loans did each customer have ongoing after a first installment of repayments? : 1
+--count of loans ongoing after repayment: 3
+-- how many loans did each customer have ongoing after a first installment of repayments? : 3
 -- how many loans did each customer have ongoing after a second installment of repayments? : 0
 select count(*) count_of_loans
 , repaid.customer
@@ -16,7 +16,7 @@ INNER JOIN {{ ref('loan_stream') }} as ongoing
 ON
 (
     ongoing.customer = repaid.customer AND
-    ongoing.ts < repaid.ts
+    ongoing.ts > repaid.ts
 )
 WHERE
 (
